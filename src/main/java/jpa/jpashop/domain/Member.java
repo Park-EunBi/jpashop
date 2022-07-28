@@ -1,9 +1,8 @@
 package jpa.jpashop.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Member {
@@ -14,6 +13,10 @@ public class Member {
     private String city;
     private String street;
     private String zipcode;
+
+    // 참조를 사용하도록 변경 (양방향)
+    @OneToMany(mappedBy = "member")
+    private List<Order> orders = new ArrayList<>();
 
     // setter 는 생성할 때 주의하기
     // 유지보수하기 힘들어짐
