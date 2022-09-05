@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Item {
+// 상속 관계 맵핑을 위해 추가
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn
+public class Item extends BaseEntity{
 
     @Id @GeneratedValue
     @Column(name = "ITEM_ID")

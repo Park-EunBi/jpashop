@@ -10,7 +10,7 @@ import java.util.List;
 
 // db 에 있는 orders 와 맵핑 - order 가 예약어인 경우도 있어서
 @Entity(name = "orders")
-public class Order {
+public class Order extends BaseEntity{
     @Id @GeneratedValue
     @Column(name = "ORDER_ID")
     private Long id;
