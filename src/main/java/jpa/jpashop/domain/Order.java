@@ -22,6 +22,10 @@ public class Order {
     @JoinColumn(name = "MEMBER_ID")
     private Member member;
 
+    @OneToOne
+    @JoinColumn(name = "DELIVERY_ID")
+    private Delivery delivery;
+
     // 참조를 사용하도록 변경 (양방향)
     @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItems = new ArrayList<>();
