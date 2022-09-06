@@ -13,7 +13,7 @@ public class OrderItem extends BaseEntity{
 
     // 연관관계 맵핑
     // 외래키로 받는 것이 아니라 객체로 받게 된다
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ORDER_ID")
     private Order order;
 
@@ -21,7 +21,7 @@ public class OrderItem extends BaseEntity{
 //    private Long itemId;
 
     // 연관관계 맵핑
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ITEM_ID")
     private Item item;
 
